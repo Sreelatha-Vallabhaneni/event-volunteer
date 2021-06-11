@@ -23,6 +23,7 @@ function Form(){
   
   const handleSubmit = event => {
     event.preventDefault();
+    
     const user = {
       name: state.name,
       Surname: state.surname,
@@ -34,7 +35,13 @@ function Form(){
     };
     
     axios.post(`https://jsonplaceholder.typicode.com/posts`, { user })
-      .then(res => console.log(res.data))
+      .then(res => {console.log(res.data)
+        alert('Successfully submitted');
+        event.target.reset();
+        return setState({
+        info:''
+        })
+      })
   }
     return (
       <div className="volunteer" id="volunteer-form">

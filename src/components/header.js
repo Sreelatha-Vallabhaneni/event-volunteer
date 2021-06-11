@@ -4,8 +4,6 @@ import NavBar from './navBar';
 import Menu from './menu';
 
 function Header () {
-    const [state, setState] = React.useState(false);
-
 
     return(
         <div className='header-container'>
